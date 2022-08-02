@@ -12,12 +12,6 @@
 * tqdm  
 * sklearn
 ****
-**Training parameters**
-****
-> python generate_hdf5.py  
-> python train_data.py 0 0 53  
-> python save_result.py  
-****
 **10-fold cross-validation**
 ****
 >python generate_hdf5_10.py  
