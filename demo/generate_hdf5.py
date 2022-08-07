@@ -6,13 +6,7 @@ import os
 #from unicode import *
 
 def seq_to_matrix(seq,seq_matrix,seq_order):
-    '''
-    change target 3D tensor according to sequence and order
-    :param seq:第一行 RNA sequence
-    :param seq_matrix
-    :param seq_order 0
-    :return:
-    '''
+
     for i in range(len(seq)):
         if ((seq[i] == 'A') | (seq[i] == 'a')):
             seq_matrix[seq_order, i, 0] = 1
@@ -32,7 +26,7 @@ def genarate_matrix_for_train(seq_shape,seq_series):
     :param seq_series: dataframe of all sequences
     :return:seq
     """
-    seq_matrix = np.zeros(seq_shape)#产生n个101行4列的数组，全为零的数组
+    seq_matrix = np.zeros(seq_shape)
     for i in range(seq_series.shape[0]):
         seq_tem = seq_series[i]
         seq_matrix = seq_to_matrix(seq_tem, seq_matrix, i)
@@ -67,11 +61,11 @@ def generate_dataset_matrix(file_path):
         #print(AllTem+'*')
         #print(output_dir+'%')
         SeqLen = 81
-        ChipSeqlFileFa = pd.read_csv(allFileFa, sep=' ', header=None, index_col=None,engine ='python')#空格分隔，取消表头，
+        ChipSeqlFileFa = pd.read_csv(allFileFa, sep=' ', header=None, index_col=None,engine ='python')
         #print(ChipSeqlFileFa,'')
         seq_series = np.asarray(ChipSeqlFileFa.loc[:, 1])
         seq_name = np.asarray(ChipSeqlFileFa.loc[:, 0])
-        seq_matrix_out = genarate_matrix_for_train((seq_series.shape[0], SeqLen, 4), seq_series)#序列行数，101长度，4个核苷酸
+        seq_matrix_out = genarate_matrix_for_train((seq_series.shape[0], SeqLen, 4), seq_series)
         seq_label_out = np.asarray(ChipSeqlFileFa.loc[:, 2])
         #print(seq_name)
         mkdir(output_dir)
