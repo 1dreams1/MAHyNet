@@ -22,7 +22,7 @@ def mkdir(path):
     else:
         return False
 
-def train_CNN_model(number_of_kernel,
+def  train_Hybrid_model(number_of_kernel,
                     ker_len, input_shape,
                     batch_size,
                     epoch_num,
@@ -32,7 +32,7 @@ def train_CNN_model(number_of_kernel,
                     local_window_size = 8):
 
     model = keras.models.Sequential()
-    model, sgd = build_CNN(model,
+    model, sgd = build_model(model,
                            number_of_kernel,
                            ker_len,
                            input_shape=input_shape,
@@ -127,7 +127,7 @@ epoch_num = 100
 ker_len_list=[15]
 for ker_len in ker_len_list:
 
-    History_Soft, prediction_Soft = train_CNN_model(number_of_kernel=number_of_kernel,
+    History_Soft, prediction_Soft = train_Hybrid_model(number_of_kernel=number_of_kernel,
                                                     ker_len=ker_len,
                                                     input_shape=input_shape,
                                                     batch_size=batch_size,
