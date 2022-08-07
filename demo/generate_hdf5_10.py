@@ -6,13 +6,7 @@ import os
 #from unicode import *
 
 def seq_to_matrix(seq,seq_matrix,seq_order):
-    '''
-    change target 3D tensor according to sequence and order
-    :param seq:第一行 DNA sequence
-    :param seq_matrix
-    :param seq_order 0
-    :return:
-    '''
+
     for i in range(len(seq)):
         if ((seq[i] == 'A') | (seq[i] == 'a')):
             seq_matrix[seq_order, i, 0] = 1
@@ -41,11 +35,6 @@ def genarate_matrix_for_train(seq_shape,seq_series):
 
 
 def mkdir(path):
-    """
-    make dictionary
-    :param path
-    :return:
-    """
     isExists = os.path.exists(path)
     if not isExists:
         os.makedirs(path)
