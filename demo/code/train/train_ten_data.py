@@ -16,7 +16,7 @@ def run_data(data_prefix, result_path, data_info, GPU_SET, kernel_number, local_
 def get_data_info(path):
     """
     :param path:  the data path
-    :return: a list include  all chip data name (total 690 data set)
+    :return: a list include  all chip data name (total 53 data set)
     """
     #path_list = glob.glob(path + '*/')
     path_list = glob.glob(path)
@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # GPU_SET: which GPU to use
     # start : the start in this running
     # end: the end in this running
-    # all these parameters are got from argv
+
 
     GPU_SET = sys.argv[1]
     start = int(sys.argv[2])
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     '''
     GPU_SET = 0
     start = 0
-    end = 2
+    end = 53
     '''
     # the path of data
     path = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF510\*"
@@ -49,14 +49,9 @@ if __name__ == '__main__':
     data_list = get_data_info(path)
     print(data_list)
     start_time =  time.time()
-    # pool is max paiallel number of data to run
+
 
     pool = Pool(processes  = 1)
-    # all hyper-parameter list
-    # local window size list
-    # random seed list
-    # kernel number list
-    # m list
     local_window_size_list = [19]
     random_seed_list = [1]
     kernal_number_list = [128]
