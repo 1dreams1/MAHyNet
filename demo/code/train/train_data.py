@@ -28,7 +28,6 @@ if __name__ == '__main__':
     # GPU_SET: which GPU to use
     # start : the start in this running
     # end: the end in this running
-    # all these parameters are got from argv
 
     GPU_SET = sys.argv[1]
     start = int(sys.argv[2])
@@ -36,7 +35,7 @@ if __name__ == '__main__':
     '''
     GPU_SET = 0
     start = 0
-    end = 2
+    end = 53
     '''
     # the path of data
     path = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF5\*"
