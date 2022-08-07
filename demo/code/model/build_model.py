@@ -2,9 +2,9 @@
 from Muattention import *
 import keras
 import keras.callbacks
-from keras.layers import Conv1D, Activation, Dropout,regularizers,Bidirectional
+from keras.layers import Conv1D, Activation, Dropout,regularizers
 import keras.backend
-#from keras.layers.embeddings import  Embedding
+
 
 
 def build_CNN(model_template, number_of_kernel, kernel_length, input_shape, local_window_size=8):
