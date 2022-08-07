@@ -36,7 +36,7 @@ def AUC(label, pred):
     return roc_auc
 
 
-def train_CNN_model(number_of_kernel,
+def  train_Hybrid_model(number_of_kernel,
                     ker_len, input_shape,
                     batch_size,
                     epoch_num,
@@ -47,7 +47,7 @@ def train_CNN_model(number_of_kernel,
 
     model = keras.models.Sequential()
 
-    model, sgd = build_CNN(model,
+    model, sgd = build_model(model,
                            number_of_kernel,
                            ker_len,
                            input_shape=input_shape,
@@ -173,7 +173,7 @@ for i in range(10):
         Y_train= np.delete(Y, range(int(idx * i * 0.1), int(idx * (i + 1) * 0.1)), axis=0)
         Y_train = np.delete(Y_train, range(int(((i + 1) % 8) * idx * 0.1)), axis=0)
 
-    History_Soft, prediction_Soft = train_CNN_model(number_of_kernel=number_of_kernel,
+    History_Soft, prediction_Soft =  train_Hybrid_model(number_of_kernel=number_of_kernel,
                                                     ker_len=ker_len,
                                                     input_shape=input_shape,
                                                     batch_size=batch_size,
