@@ -51,7 +51,6 @@ def see(allFileFaList):
                     print(auc30)
                     f.writelines(auc30)
 
-
     f.close()
 
 
