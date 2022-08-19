@@ -16,7 +16,6 @@ print(allFileFaList)
 def process_data(allFileFaList ):
     for FilePath in allFileFaList:
         filenames = glob.glob(FilePath+"\*.fa")
-        print(filenames,'$$$$')
         for allFileFa in filenames:
             AllTem = allFileFa.split("\\")[-1].split(".")[-2]#negatives
             output_dir = allFileFa.split(AllTem)[0]#route
@@ -35,6 +34,7 @@ def process_data(allFileFaList ):
                     else:
                         line=line.replace("\n","")
                         f2.writelines(line)
+
 
 
 process_data(allFileFaList)
