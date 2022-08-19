@@ -9,8 +9,6 @@ from keras.layers import *
 
 
 class OurLayer(Layer):
-    """定义新的Layer，增加reuse方法
-    """
     def reuse(self, layer, *args, **kwargs):
         if not layer.built:
             if len(args) > 0:
