@@ -121,7 +121,6 @@ def  train_Hybrid_model(number_of_kernel,
 
     return history, auc
 
-
 # read the hyper-parameters
 data_path = sys.argv[1]
 result_path = sys.argv[2]
