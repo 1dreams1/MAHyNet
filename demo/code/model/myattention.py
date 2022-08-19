@@ -5,8 +5,6 @@ import numpy as np
 
 
 class MyAttention(k.layers.Layer):
-    """注意力机制
-    """
     def __init__(self, out_dim,key_size=8, **kwargs):
         super(MyAttention, self).__init__(**kwargs)
         self.out_dim = out_dim
