@@ -1,7 +1,6 @@
 
 import h5py
 
-
 def load_data(dataset):
     data = h5py.File(dataset, 'r')
     sequence_code = data['sequences'].value
