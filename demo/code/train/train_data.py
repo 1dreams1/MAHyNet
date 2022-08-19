@@ -5,6 +5,7 @@ import glob
 import time
 
 
+
 def run_data(data_prefix, result_path, data_info, GPU_SET, kernel_number, local_window_size,random_seed):
     cmd = "python ../model/train_model.py"
     data_path = data_prefix +"\\" + data_info + "\\"
