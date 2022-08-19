@@ -2,7 +2,6 @@ import glob
 import numpy as np
 
 
-
 #You need modify path
 allFileFaList = glob.glob(r"F:\Download\lengent\venv\MAHyNet-main\RNAProt_supplementary_data\set2_add_feat_rnaprot_train_in30\*")
 
