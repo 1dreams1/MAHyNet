@@ -6,7 +6,6 @@ import time
 
 def run_data(data_prefix, result_path, data_info, GPU_SET, kernel_number, local_window_size,random_seed):
 
-
     cmd = "python ../model/train_model_all.py"
     data_path = data_prefix +"\\" + data_info + "\\"
     set = cmd + " " + data_path + " " +result_path + " " + data_info + " "+str(kernel_number) + " " + str(random_seed) +" " + str(local_window_size)+ " " +GPU_SET
