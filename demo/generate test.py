@@ -13,7 +13,6 @@ def create_test(allFileFaList):
     for FilePath in allFileFaList:
         count = 0
         filenames = glob.glob(FilePath+"\\trainr.test")
-        #print(filenames,'$$$$')
         for allFileFa in filenames:
             AllTem = allFileFa.split("\\")[-1].split(".")[-2]#negatives
             output_dir = allFileFa.split(AllTem)[0]#route
