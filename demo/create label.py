@@ -104,6 +104,5 @@ def rewrite(allFileFaList):
                 f.writelines(lines[i])
 
 
-
 create_laber(allFileFaList)
 rewrite(allFileFaList)
