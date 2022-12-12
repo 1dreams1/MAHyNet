@@ -120,6 +120,7 @@ def generate_dataset_matrix(file_path):
 
 if __name__ == '__main__':
     base = {0:"A",1:"C",2:"G",3:"U"}
+    # You need modify path
     allFileFaList = glob.glob(r"F:\Download\lengent\venv\MAHyNet-main\demo\motif_discovery\*")
     for FilePath in allFileFaList:
         generate_dataset_matrix(FilePath)
