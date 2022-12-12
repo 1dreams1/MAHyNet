@@ -18,7 +18,6 @@
 >python generate_hdf5_ph.py
 >python train_data.py 0 0 53  
 >python save_result.py
-
 ****
 **10-fold cross-validation**
 ****
