@@ -3,6 +3,7 @@ import sys
 import os
 import time
 import numpy as np
+
 #You need modify path
 allFileFaList = glob.glob(r"F:\Download\lengent\venv\MAHyNet-main\demo\result_sum\*")
 result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\code\result\result_sum.txt"
@@ -14,12 +15,11 @@ def see(allFileFaList):
     countauc=0
     countnumber=0
     f = open(result_path, 'w')
-    #file=[]
+
     for FilePath in allFileFaList:
         filenames = glob.glob(FilePath + "\\*.npy")
         count+=1
         countnumber += 1
-        #print(filenames,'\n',count)
 
         data = FilePath.split("\\")[-1]
         for allFileFa in filenames:
@@ -51,7 +51,10 @@ def see(allFileFaList):
                     print(auc30)
                     f.writelines(auc30)
 
+
     f.close()
+
+
 
 
 see(allFileFaList)
