@@ -15,13 +15,21 @@
 **Non-10-fold cross-validation**
 ****
 >python generate_hdf5.py
+
 >python generate_hdf5_ph.py
->python train_data.py 0 0 53  
+
+>python train_data.py 0 0 53 
+ 
 >python save_result.py
+
 ****
 **10-fold cross-validation**
 ****
 >python generate_hdf5_10.py 
+
 >python generate_hdf5_10ph.py
+
 >python train_ten_data.py 0 0 53  
+
 >python see_10_fold.py  
+
