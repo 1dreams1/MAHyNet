@@ -48,9 +48,6 @@ class Multi_Head_attention(OurLayer):
         self.head4 = MyAttention(out_dim=self.out_dim)
         self.head5 = MyAttention(out_dim=self.out_dim)
         self.head6 = MyAttention(out_dim=self.out_dim)
-        self.head7 = MyAttention(out_dim=self.out_dim)
-        self.head8 = MyAttention(out_dim=self.out_dim)
-        self.head9 = MyAttention(out_dim=self.out_dim)
 
 
         self.w0 = keras.layers.core.Dense(self.out_dim, use_bias=False)
@@ -62,12 +59,7 @@ class Multi_Head_attention(OurLayer):
         h4 = self.reuse(self.head4, inputs)
         h5 = self.reuse(self.head5, inputs)
         h6 = self.reuse(self.head6, inputs)
-        h7 = self.reuse(self.head7, inputs)
-        h8 = self.reuse(self.head8, inputs)
-        h9 = self.reuse(self.head9, inputs)
-        # h_r=tf.reshape(tf.concat([h1,h2,h3,h4,h5],-1),(input_size[0],input_size[1],1,input_size[-1]*5))
-        # h_r=tf.reshape(tf.multiply(h_r,self.w0),(input_size[0],input_size[1],input_size[-1]))
-        h_r = self.reuse(self.w0, tf.concat([h1, h2, h3, h4, h5, h6, h7, h8, h9], -1))
+        h_r = self.reuse(self.w0, tf.concat([h1, h2, h3, h4, h5, h6], -1))
         return h_r
 
 
