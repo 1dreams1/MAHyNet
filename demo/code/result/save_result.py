@@ -90,4 +90,4 @@ data_all['AUC'] = data_all['AUC'].astype(float)
 
 
 # save the result to csv file
-data_all.to_csv('result_2li_A2.csv', index=False)
+data_all.to_csv('result_window.csv', index=False)
