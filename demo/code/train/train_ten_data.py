@@ -43,7 +43,7 @@ if __name__ == '__main__':
     # the path of data
     path = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF510\*"
     data_prefix = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF510"
-    result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\result_pppppp"
+    result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\result_local"
 
     path1 = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF5li\*"
     data_prefix1 = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF5li"
