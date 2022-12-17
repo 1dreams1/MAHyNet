@@ -39,14 +39,14 @@ if __name__ == '__main__':
     # the path of data
     path = r"F:\Download\lengent\venv\\MAHyNet-main\demo\HDF5\*"
     data_prefix = r"F:\Download\lengent\venv\\MAHyNet-main\demo\HDF5"
-    result_path = r"F:\Download\lengent\venv\\MAHyNet-main\demo\result_ppp"
+    result_path = r"F:\Download\lengent\venv\\MAHyNet-main\demo\result_local"
     path1 = r"F:\Download\lengent\venv\\MAHyNet-main\demo\HDF5_2li\*"
     data_prefix1 = r"F:\Download\lengent\venv\MAHyNet-main\demo\HDF5_2li"
 
     data_list = get_data_info(path)
     data_list1 =get_data_info(path1)
     start_time =  time.time()
-    pool = Pool(processes  = 1 )
+    pool = Pool(processes  = 4 )
     local_window_size_list = [19]#19
     #local_window_size_list = [2,5,9,15,19,25,51]
     random_seed_list = [1]
