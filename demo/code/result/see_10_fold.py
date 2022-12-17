@@ -5,8 +5,8 @@ import time
 import numpy as np
 
 #You need modify path
-allFileFaList = glob.glob(r"F:\Download\lengent\venv\MAHyNet-main\demo\result_sum\*")
-result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\code\result\result_sum.txt"
+allFileFaList = glob.glob(r"F:\Download\lengent\venv\MAHyNet-main\demo\result_local\*")
+result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\code\result\result_local.txt"
 
 def see(allFileFaList):
     cour = []
