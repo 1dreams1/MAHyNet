@@ -75,7 +75,6 @@ def train_Hybrid_model(number_of_kernel,
                     + '_localwindow_' + str(local_window_size)
 
     modelsave_output_filename = output_prefix + "_checkpointer.hdf5"
-    history_output_path = output_prefix + '.history'
     prediction_save_path = output_prefix + '.npy'
 
     if os.path.exists(prediction_save_path):
@@ -84,9 +83,9 @@ def train_Hybrid_model(number_of_kernel,
 
     earlystopper = keras.callbacks.EarlyStopping(monitor='val_loss',
                                                  patience=8,
-                                                 verbose=0)
+                                                 verbose=1)
     checkpointer = keras.callbacks.ModelCheckpoint(filepath=modelsave_output_filename,
-                                                   verbose=0,
+                                                   verbose=1,
                                                    save_best_only=True)
 
     history = model.fit([X_train,X1_train],
@@ -94,17 +93,14 @@ def train_Hybrid_model(number_of_kernel,
                         epochs=epoch_num,
                         batch_size=batch_size,
                         validation_data=([X_val,X1_val],Y_val),
-                        verbose=1,
+                        verbose=0,
                         callbacks=[checkpointer, earlystopper]
                         )
 
     model.load_weights(modelsave_output_filename)
     prediction = model.predict([X_test,X1_test])
     np.save(prediction_save_path, prediction)
-
-    # save the history
-    with open(history_output_path, 'wb') as file_pi:
-        pickle.dump(history.history, file_pi)
+    
     return history, prediction
 
 # read the hyper-parameters
