@@ -55,7 +55,6 @@ result_path = r"F:\Download\lengent\venv\MAHyNet-main\demo\result_window\*"
 data_path = "F:\Download\lengent\\venv\MAHyNet-main\demo\HDF5\\"
 
 auc = []
-ap = []
 random_seed = []
 kernel_length_list=[]
 local_window = []
